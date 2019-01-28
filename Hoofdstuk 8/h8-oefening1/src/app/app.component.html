@@ -1,0 +1,5 @@
+<body>
+    <h1>Overwatch portfolio</h1>
+    <app-search (onCharEnter)="handleNameFilter($event)" (onSelectionChange)="handleRatingFilter($event)"></app-search>
+    <app-hero *ngFor="let hero of heroList" [hero]="hero"></app-hero>
+</body>

@@ -1,0 +1,15 @@
+<nav>
+  <a [routerLink]="['/page1']" routerLinkActive="router-link-active">page 1</a>
+  <a [routerLink]="['/page2']" routerLinkActive="router-link-active">page 2</a>
+  <a href="paeg3">Niet bestaande page 3</a>
+</nav>
+
+<div class="opgave">
+  <ul>
+    <li>De homepage moet verwijzen naar page1</li>
+    <li>page 1 en page 2 moeten werken, page 3 verwijst naar de 404 component</li>
+    <li>De routing staat in een aparte module</li>
+    <li>bij het verlaten van page 2 krijg je een confirm. Bij annuleren blijf je op page 2 </li>
+  </ul>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,10 @@
+<p>De applicatie geeft een overzicht van een aantal cryptocurrencies. Als je op een item klikt, wordt dit apart weergegeven in de app component. In deze div kan je op een link "close"
+klikken waarbij het deelvenster terug verborgen wordt.
+</p>
+
+<div *ngIf="selectedCoin">
+  name: {{selectedCoin.name}} - Value: {{selectedCoin.val}}
+  <a href="#" (click)="close()">close</a>
+</div>
+
+<app-coin-list (selectedCoinEmitter)="selectCoin($event)"></app-coin-list>

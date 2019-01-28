@@ -1,0 +1,25 @@
+<body>
+  <h1>Auto's</h1>
+  <table>
+    <tr>
+      <th>id</th>
+      <th>Merk</th>
+      <th>Type</th>
+      <th>Bouwjaar</th>
+      <th>Prijs</th>
+      <th>Stock</th>
+      <th>verkoop</th>
+    </tr>
+    <tr *ngFor="let auto of autoList; let i = index">
+      <td>{{auto.id}}</td>
+      <td>{{auto.merk}}</td>
+      <td>{{auto.type}}</td>
+      <td>{{auto.bouwjaar}}</td>
+      <td>{{auto.prijs | currency:'EUR'}}</td>
+      <td>{{auto.stock}}</td>
+      <td><button type="button" (click)="verkoop(i)">verkoop</button></td>
+    </tr>
+  </table>
+
+  <app-auto-form (onSubmit)="addAuto($event)"></app-auto-form>
+</body>

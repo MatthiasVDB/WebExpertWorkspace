@@ -1,0 +1,9 @@
+<h2>Voeg toe</h2>
+<form [formGroup]="form" (ngSubmit)="submit(form)">
+  <input type="text" placeholder="merk" formControlName="merk"/><br/>
+  <input type="text" placeholder="type" formControlName="type"/><br/>
+  <input type="text" placeholder="bouwjaar" formControlName="bouwjaar"/><br/>
+  <input type="text" placeholder="prijs" formControlName="prijs"/><br/>
+  <input type="text" placeholder="stock" formControlName="stock"/><br/>
+  <button type="submit">Voeg toe</button>
+</form>

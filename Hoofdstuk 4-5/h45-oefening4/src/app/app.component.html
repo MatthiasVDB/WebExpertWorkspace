@@ -1,0 +1,11 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h1>
+  Pokedex
+</h1>
+<p>Geselecteerde pokemon: <span *ngIf="selectedPokemon">{{ selectedPokemon.name }}</span></p>
+<app-pokemon *ngFor="let pokemon of pokemonList;" [pokemon]="pokemon" (onSelect)="handleData($event)"
+    [ngClass]="{gold: (selectedPokemon === pokemon),
+    red: (pokemon.pokeType == 'Fire'),
+    green: (pokemon.pokeType == 'Grass'),
+    blue: (pokemon.pokeType == 'Water')}">
+</app-pokemon>

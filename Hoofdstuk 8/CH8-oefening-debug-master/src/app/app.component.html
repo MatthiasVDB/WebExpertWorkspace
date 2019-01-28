@@ -1,0 +1,30 @@
+<h2>Oefeningendatabank</h2>
+<ul>
+  <li>Er moet een lijst van oefeningen verschijnen</li>
+  <li>Via de checkbox kan je het veld "finished" updaten</li>
+  <li>Gebruik de refresh knop om te testen of de toggle 'finish' gelukt is</li>
+  <li>Bij het verwijderen moet de lijst automatisch vernieuwen</li>
+  <li>Bij het toevoegen wordt de lijst van vakken opgehaald via de service</li>
+  <li>Bij het toevoegen moet de lijst automatisch vernieuwen</li>
+</ul>
+<button (click)="refresh()">Refresh list</button>
+<div class="oef" *ngFor="let oef of oefeningen$ | async">
+  <h1>{{ oef.course }} - {{ oef.name }}</h1>
+  <a [href]="oef.link">Oefeningen op github</a>
+  <input type="checkbox" [checked]="oef.finished" (click)="toggleFinish(oef)" /> Afgewerkt
+
+  <button (click)="delete(oef)" class="delete">delete</button>
+</div>
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <h3>Voeg oefeningen toe:</h3>
+  <label>Naam:</label>
+  <input type="text" name="name" [(ngModel)]="name" />
+  <label>Vak:</label>
+  <select name="course" [(ngModel)]="course">
+    <option *ngFor="let vak of vakken$ | async" [value]="vak.name">{{vak.name}}</option>
+  </select>
+  <label>Github link:</label>
+  <input type="url" name="link" [(ngModel)]="link"/>
+  <input type="submit" value="voeg toe" />
+</form>

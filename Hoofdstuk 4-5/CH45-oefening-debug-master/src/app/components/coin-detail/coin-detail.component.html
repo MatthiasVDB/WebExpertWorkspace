@@ -1,0 +1,6 @@
+<section (click)="onClick()">
+  <div class="index">{{i}}.</div>
+  <div class="name">{{coinDetail.name}}</div>
+  <div class="price">{{coinDetail.val | currency:'USD'}}</div>
+  <div class="marketcap">{{coinDetail.marketCap | currency:'USD'}}</div>
+</section>

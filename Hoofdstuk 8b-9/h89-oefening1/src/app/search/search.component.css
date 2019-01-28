@@ -1,0 +1,10 @@
+:host {
+    margin: 1rem;
+    padding: 0.5rem;
+    display: block;
+    background-color: rgb(199, 200, 195);
+}
+
+.filterTitle {
+    font-weight: bold;
+}

@@ -1,0 +1,2 @@
+<app-new-klant (onSubmit)="createKlant($event)"></app-new-klant>
+<app-klant *ngFor="let klant of klanten; let i = index" [klant]= "klant" [index]="i"></app-klant>

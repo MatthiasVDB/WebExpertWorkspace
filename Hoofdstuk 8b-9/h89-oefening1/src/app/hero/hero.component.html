@@ -1,0 +1,7 @@
+<h2>{{hero.name}} <span [innerHTML]="hero.difficulty | generateStars" class="star"></span></h2>
+<p class="heroClass">{{hero.class}}</p>
+<span>
+  <img [src]="hero.avatar" alt="{{hero.name}}"/>
+  <h3>Abilities</h3>
+  <span *ngFor="let ability of hero.abilities">{{ability}}<br/></span>
+</span>

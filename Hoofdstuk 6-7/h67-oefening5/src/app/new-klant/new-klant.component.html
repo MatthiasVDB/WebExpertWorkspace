@@ -1,0 +1,11 @@
+<h2>Voeg nieuwe klant toe:</h2>
+<form [formGroup]= "nieuweKlantForm" (ngSubmit)="submit()">
+  Voornaam: <input type="text" formControlName="voornaam"/> <br/>
+  Naam: <input type="text" formControlName="achternaam"/> <br/>
+  E-mail: <input type="text" formControlName="email"/> <br/>
+  Straatnaam: <input type="text" formControlName="straatnaam"/>
+  Huisnummer: <input type="number" formControlName="huisnummer"/> <br/>
+  Postcode: <input type="number" formControlName="postcode"/>
+  Gemeente: <input type="text" formControlName="gemeente"/> <br/>
+  <input type="submit" value="Voeg toe" [disabled]="nieuweKlantForm.invalid"/>
+</form>

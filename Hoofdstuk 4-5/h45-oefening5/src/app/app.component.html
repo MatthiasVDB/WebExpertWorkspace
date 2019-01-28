@@ -1,0 +1,5 @@
+<h1>Huisdieren</h1>
+<table>
+  <tr *ngFor="let huisdier of huisdieren;"><td><button (click)="delete(huisdier)">del</button></td><td>{{huisdier}}</td></tr>
+</table>
+<input type="text" name="pet" [(ngModel)]="ingegevenPet"/><button (click)="toevoegen()">toevoegen</button>

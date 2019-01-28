@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+}
+
+section{
+    border-bottom: 1px dotted black;
+    padding: 10px;
+    overflow: auto;
+}
+
+.name{
+    width: 55%;
+    float: left;
+}
+
+.price{
+    width: 20%;
+    float: left;
+}
+
+.marketcap{
+    width: 20%;
+    float: left;
+}
+
+.index{
+    width: 5%;
+    float: left;
+}
+
+section:hover{
+    background-color: #efefef;
+    cursor: pointer;
+
+}

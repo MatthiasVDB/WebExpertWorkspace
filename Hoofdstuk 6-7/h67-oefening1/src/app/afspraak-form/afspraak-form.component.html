@@ -1,0 +1,36 @@
+<h1>Afspraak maken</h1>
+<form [formGroup]="form" (ngSubmit)="submit(form)">
+  <table>
+    <tr>
+      <td><label>Omschrijving:</label></td>
+      <td><input type="text" name="description" formControlName="description"></td>
+      <p *ngIf="form.get('description').hasError('minlength')" class="error">Description must have a minimum of 3 characters.</p>
+      <p *ngIf="form.get('description').hasError('maxlength')" class="error">Description must have less than 25 characters.</p>
+      <p *ngIf="form.get('description').hasError('required')" class="error">Description Required.</p>
+    </tr>
+    <tr>
+      <td><label>Datum:</label></td>
+      <td><input type="date" name="date" formControlName="date"></td>
+      <p *ngIf="form.get('date').hasError('required')" class="error">Date Required.</p>
+    </tr>
+    <tr>
+      <td><label>Dagdeel:</label></td>
+      <td>
+        <input type="checkbox" name="dayPartBeforeNoon" formControlName="dayPartBeforeNoon"><label>voormiddag</label><br>
+        <input type="checkbox" name="dayPartAfterNoon" formControlName="dayPartAfterNoon"><label>namiddag</label>
+      </td>
+    </tr>
+    <tr>
+      <td><label>Type afspraak:</label></td>
+      <td><select name="meetingType" formControlName="meetingType"><option *ngFor="let option of options;" value="{{option}}">{{option}}</option></select></td>
+    </tr>
+    <tr>
+      <td><label>Herinnering:</label></td>
+      <td>
+        <input type="radio" name="reminder" value="ja" formControlName="reminder">Ja
+        <input type="radio" name="reminder" value="nee" formControlName="reminder">Nee
+      </td>
+    </tr>
+  </table>
+  <button type="submit" [disabled]="form.invalid">Aanmaken</button>
+</form>

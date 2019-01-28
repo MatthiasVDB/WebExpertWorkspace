@@ -1,0 +1,4 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<input type="text" name="username" [(ngModel)]="username">
+<p>{{ username }}</p>
+<button type="button" (click)="clear()" [disabled]="usernameEmpty()">Clear</button>

@@ -1,0 +1,16 @@
+<nav>
+  <ul>
+    <li>
+      <a routerLink="/home" title="Home" routerLinkActive="active">Home</a>
+    </li>
+    <li>
+      <a routerLink="/info" title="Info">Info</a>
+    </li>
+    <li>
+      <a routerLink="/getal/{{getal}}" title="Getallen">Getallen</a>
+    </li>
+  </ul>
+</nav>
+<input type="number" [(ngModel)]=getal/>
+
+<router-outlet></router-outlet>

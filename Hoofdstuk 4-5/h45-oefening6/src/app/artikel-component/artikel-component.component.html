@@ -1,0 +1,8 @@
+<table >
+  <tr>
+    <th>Artikelnummer</th><th>Artikelnaam</th><th>Aankoopprijs</th><th>Verkoopprijs</th><th>Afbeelding</th><th>Info</th>
+  </tr>
+  <tr *ngFor="let artikel of artikelen; let e=even;" [ngClass]="{evenrow:e, oddrow:!e}" (click)=showAlert(artikel)>
+    <td>{{artikel.artikelNummer}}</td><td>{{artikel.artikelNaam}}</td><td>{{artikel.aankoopprijs}}</td><td>{{artikel.verkoopprijs}}</td><td><img src="{{artikel.afbeelding}}"/></td><td><a href="https://www.google.be/search?q={{artikel.artikelNaam}}">Info</a></td>
+  </tr>
+</table>

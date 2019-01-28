@@ -1,0 +1,24 @@
+:host {
+    margin: 1rem;
+    padding-left: 0.5rem; 
+    display: inline-block;
+    background-color: rgb(7, 56, 60);
+    color: white;
+    width: 400px;
+    height: 300px;
+}
+
+.star {
+    color: gold;
+}
+
+.heroClass {
+    font-style: italic;
+}
+
+img {
+    float: left;
+    width: 90px;
+    height: 155px;
+    margin-right: 1rem; 
+}

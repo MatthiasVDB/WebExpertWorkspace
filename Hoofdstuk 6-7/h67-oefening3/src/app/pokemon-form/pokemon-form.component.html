@@ -1,0 +1,26 @@
+<h2>Add a Pokemon</h2>
+<form [formGroup]="form" (ngSubmit)="add(form)">
+  <table>
+    <tr>
+      <td><label>Number:</label></td>
+      <td><input type="number" name="number" formControlName="number"></td>
+      <p *ngIf="form.get('number').hasError('required')" class="error">Number Required.</p>
+    </tr>
+    <tr>
+      <td><label>Name:</label></td>
+      <td><input type="text" name="name" formControlName="name"></td>
+      <p *ngIf="form.get('name').hasError('minlength')" class="error">Name must have a minimum of 3 characters.</p>
+      <p *ngIf="form.get('name').hasError('required')" class="error">Name Required.</p>
+    </tr>
+    <tr>
+      <td><label>Pokemon Type:</label></td>
+      <td><select name="pokemonType" formControlName="pokemonType"><option *ngFor="let option of options;" value="{{option}}">{{option}}</option></select></td>
+      <p *ngIf="form.get('pokemonType').hasError('required')" class="error">Type Required.</p>
+    </tr>
+    <tr>
+      <td><label>Avatar Url:</label></td>
+      <td><input type="text" name="avatar" formControlName="avatar"></td>
+    </tr>
+  </table>
+  <button type="submit" [disabled]="form.invalid">Add</button>
+</form>
