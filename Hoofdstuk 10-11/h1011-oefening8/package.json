@@ -1,0 +1,12 @@
+{
+  "name": "oefening8",
+  "version": "1.0.0",
+  "description": "Een Express webserver met API en statische website",
+  "main": "server.js",
+  "author": "Matthias Van Den Bergh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "body-parser": "^1.13.2"
+  }
+}
